@@ -1,5 +1,5 @@
 
-package com.tarini.sales;
+package com.tarini.sales.products;
 
 public interface Product {
 
