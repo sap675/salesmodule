@@ -17,43 +17,38 @@
  ***************************************************************************************/
 package com.tarini.sales;
 
+import java.util.List;
+
 /**
- * The Interface SalesRecord.
+ * The Interface SaleOrder.
  */
-public interface SalesRecord {
+public interface SaleOrder {
 
     /**
-     * Gets the id.
+     * Gets the sale records.
      *
-     * @return the id
+     * @return the sale records
      */
-    public String getID();
+    public List<SalesRecord> getSaleRecords();
     
     /**
-     * Gets the product.
+     * Gets the item count.
      *
-     * @return the product
+     * @return the item count
      */
-    public String getProduct();
+    public int getItemCount();
     
     /**
-     * Gets the quantity.
+     * Gets the total order price.
      *
-     * @return the quantity
+     * @return the total order price
      */
-    public String getQuantity();
+    public String getTotalOrderPrice();
     
     /**
-     * Gets the item price.
+     * Gets the order ID.
      *
-     * @return the item price
+     * @return the order ID
      */
-    public String getItemPrice();
-    
-    /**
-     * Gets the total price.
-     *
-     * @return the total price
-     */
-    public String getTotalPrice();
+    public String getOrderID();
 }

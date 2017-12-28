@@ -15,45 +15,22 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * 
  ***************************************************************************************/
-package com.tarini.sales;
+package com.tarini.sales.factory;
+
+import com.tarini.sales.SalesRecord;
 
 /**
- * The Interface SalesRecord.
+ * A factory for creating Sales objects.
  */
-public interface SalesRecord {
+public class SalesFactory {
 
     /**
-     * Gets the id.
+     * Gets the sales record.
      *
-     * @return the id
+     * @param id the id
+     * @return the sales record
      */
-    public String getID();
-    
-    /**
-     * Gets the product.
-     *
-     * @return the product
-     */
-    public String getProduct();
-    
-    /**
-     * Gets the quantity.
-     *
-     * @return the quantity
-     */
-    public String getQuantity();
-    
-    /**
-     * Gets the item price.
-     *
-     * @return the item price
-     */
-    public String getItemPrice();
-    
-    /**
-     * Gets the total price.
-     *
-     * @return the total price
-     */
-    public String getTotalPrice();
+    public SalesRecord getSalesRecord(String id) {
+        return null;
+    }
 }
