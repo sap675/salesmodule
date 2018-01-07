@@ -17,6 +17,9 @@
  ***************************************************************************************/
 package com.tarini.sales.factory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.tarini.sales.products.Product;
 
 /**
@@ -24,6 +27,20 @@ import com.tarini.sales.products.Product;
  */
 public class ProductFactory {
 
+    private static ProductFactory instance;
+    private Map<String, Product> productMap;
+    
+    private ProductFactory() {
+        productMap = new HashMap<String, Product>();
+    }
+    
+    public static ProductFactory getInstance() {
+        if(instance == null) {
+            instance = new ProductFactory();
+        }
+        return instance;
+    }
+    
     /**
      * Gets the product.
      *
@@ -31,6 +48,18 @@ public class ProductFactory {
      * @return the product
      */
     public Product getProduct(String id) {
+        Product p = fetchProduct(id);
+        if(productMap.containsKey(id)) {
+            addToMap(p);
+        }
         return null;
+    }
+    
+    private Product fetchProduct(String id) {
+        return null;
+    }
+    
+    private void addToMap(Product p) {
+        productMap.put(p.getProductID(), p);
     }
 }

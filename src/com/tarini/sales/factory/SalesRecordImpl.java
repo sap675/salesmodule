@@ -39,7 +39,7 @@ public class SalesRecordImpl implements SalesRecord {
     /** The total price. */
     private String totalPrice;
     
-    /* (non-Javadoc)
+    /**
      * @see com.tarini.sales.SalesRecord#getID()
      */
     @Override
@@ -47,7 +47,7 @@ public class SalesRecordImpl implements SalesRecord {
         return id;
     }
 
-    /* (non-Javadoc)
+    /**
      * @see com.tarini.sales.SalesRecord#getProduct()
      */
     @Override
@@ -55,7 +55,7 @@ public class SalesRecordImpl implements SalesRecord {
         return productName;
     }
 
-    /* (non-Javadoc)
+    /**
      * @see com.tarini.sales.SalesRecord#getQuantity()
      */
     @Override
@@ -63,7 +63,7 @@ public class SalesRecordImpl implements SalesRecord {
         return quantity;
     }
 
-    /* (non-Javadoc)
+    /**
      * @see com.tarini.sales.SalesRecord#getItemPrice()
      */
     @Override
@@ -71,12 +71,37 @@ public class SalesRecordImpl implements SalesRecord {
         return itemPrice;
     }
 
-    /* (non-Javadoc)
+    /**
      * @see com.tarini.sales.SalesRecord#getTotalPrice()
      */
     @Override
     public String getTotalPrice() {
         return totalPrice;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null) {
+            return false;
+        }
+        if(!ProductImpl.class.isAssignableFrom(obj.getClass())) {
+            return false;
+        }
+        final SalesRecordImpl prod = (SalesRecordImpl) obj;
+        if((this.id == null) ? (prod.id != null) : !this.id.equals(prod.id) &&
+                (this.productName == null) ? (prod.productName != null) : !this.productName.equals(prod.productName)) {
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public int hashCode(){
+        int hash = 3;
+        hash = 53 * hash + (this.id != null ? this.id.hashCode() : 0);
+        hash = 53 * hash + (this.productName != null ? this.productName.hashCode() : 0);
+        return hash;
+      
     }
 
 }

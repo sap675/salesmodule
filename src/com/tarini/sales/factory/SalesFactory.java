@@ -17,8 +17,10 @@
  ***************************************************************************************/
 package com.tarini.sales.factory;
 
+import com.tarini.sales.SaleOrder;
 import com.tarini.sales.SalesRecord;
 
+// TODO: Auto-generated Javadoc
 /**
  * A factory for creating Sales objects.
  */
@@ -31,6 +33,16 @@ public class SalesFactory {
      * @return the sales record
      */
     public SalesRecord getSalesRecord(String id) {
+        return null;
+    }
+    
+    /**
+     * Gets the sales order.
+     *
+     * @param orderId the order id
+     * @return the sales order
+     */
+    public SaleOrder getSalesOrder(String orderId) {
         return null;
     }
 }

@@ -19,6 +19,7 @@ package com.tarini.sales.factory;
 
 import com.tarini.sales.products.Product;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class ProductImpl.
  */
@@ -39,6 +40,7 @@ public class ProductImpl implements Product {
     /** The actual price. */
     private Double actualPrice;
     
+    /** The id. */
     private String id;
     
     /**
@@ -49,6 +51,7 @@ public class ProductImpl implements Product {
      * @param price the price
      * @param taxOnProduct the tax on product
      * @param actualPrice the actual price
+     * @param id the id
      */
     ProductImpl(String name, String description, 
             String price, String taxOnProduct, Double actualPrice, String id) {
@@ -100,9 +103,37 @@ public class ProductImpl implements Product {
         return actualPrice;
     }
 
+    /* (non-Javadoc)
+     * @see com.tarini.sales.products.Product#getProductID()
+     */
     @Override
     public String getProductID() {
         return id;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null) {
+            return false;
+        }
+        if(!ProductImpl.class.isAssignableFrom(obj.getClass())) {
+            return false;
+        }
+        final ProductImpl prod = (ProductImpl) obj;
+        if((this.id == null) ? (prod.id != null) : !this.id.equals(prod.id) &&
+                (this.name == null) ? (prod.name != null) : !this.name.equals(prod.name)) {
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public int hashCode(){
+        int hash = 3;
+        hash = 53 * hash + (this.id != null ? this.id.hashCode() : 0);
+        hash = 53 * hash + (this.name != null ? this.name.hashCode() : 0);
+        return hash;
+      
     }
 
 }
